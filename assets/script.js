@@ -1,4 +1,4 @@
-var messageArray = ["Hello, welcome to my website!"];
+var messageArray = ["Hi there 👋! My name is Alex."];
 var textPosition = 0;
 var speed = 100;
 
