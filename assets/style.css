@@ -1,17 +1,26 @@
 span {
     animation: blinker 2s linear infinite
 }
+
 @keyframes blinker {
     50% {
         opacity: 0;
     }
 }
 
-.vertical-center {
+.page-center {
     margin: 0;
     position: absolute;
-    top: 50%;
+    top: 52%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+ }
