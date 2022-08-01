@@ -16,38 +16,30 @@
   </head>
   
   <body>
+    <script src="./assets/script.js"></script>
     <!-- Nav bar -->
-    <nav class="navbar shadow navbar-expand-lg navbar-light" style="background-color: #ffcc99;">
+    <nav class="navbar sticky-top shadow navbar-expand-lg navbar-light" style="background-color: #ffcc99;">
         <div class = "container" style = "font-family: courier new">
             <div class="collapse navbar-collapse text-light" id="navbarSupportedContent">
+                
                 <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class = "nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link" href="./about.html">About</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class = "nav-link" href="./assets/resume.pdf">Resume</a>
+                    <a class = "nav-link" href="./resume.html">Resume</a>
                 </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Projects
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="./projects"> All Projects</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="./projects">DIY</a>
-                        <a class="dropdown-item" href="#">Research</a>
-                    </div>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#"> Projects</a>
                 </li>
-                
                 <li class="nav-item">
                     <a class="nav-link" href="./blog.html">Blog</a>
                 </li>
-
                 </ul>
 
                 <ul class="navbar-nav ml-auto">
@@ -55,18 +47,96 @@
                         <h2> <a class="navbar-brand" style="position:absolute; right:200px; top:12px;" href="./index.html"> Alex Jiang 🛠 </a> </h2>
                     </li>
                 </ul>
-                
-            </div>
 
+            </div>
         </div>
     </nav>
     
     <div class = "container-fluid">
-    <!-- Main page content -->
-    <div class = "container"  style = "font-size:18px; margin: auto; width: 55%;">
-        
-        https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_filter_elements
+        <!-- Main page content -->
+        <div class = "container"  style = "font-size:18px; margin: auto; width: 70%;">
+            <br>
+            <h1 class = "font-weight-bold" style="font-size:48px; font-family: courier new"> 🚧 Projects </h1>
+            <br>
+            <div id="myBtnContainer">
+                <button class="btn active-filter" onclick="filterSelection('all')">All</button>
+                <button class="btn" onclick="filterSelection('diy')">DIY</button>
+                <button class="btn" onclick="filterSelection('software')">Software</button>
+                <button class="btn" onclick="filterSelection('other')"> Other</button>
+            </div>
+            <br>
+            <div class = "grid">
+                <div class="project shadow diy"> 
+                    <a class = "nav-link" style="margin:0px; padding:0px; position:relative;" href="./projects/pullup.html"> 
+                    <img src="./projects/pullup/0.jpg" class="img-fluid"> </img>
+                    </a>
+                    <div class = "hoverbox"> Pull-up bar </div>
+                </div>
+
+                <div class="project shadow diy"> 
+                    <a class = "nav-link" style="margin:0px; padding:0px; position:relative;" href="./projects/patio.html"> 
+                    <img src="./projects/patio/0.jpg" class="img-fluid"> </img>
+                    </a>
+                    <div class = "hoverbox"> Patio </div>
+                </div>
+
+                <div class="project shadow software"> 
+                    Dense Depth
+                </div>
+                <div class="project shadow diy"> 
+                    Helicopter
+                </div>
+                <div class="project shadow other"> 
+                    asd
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script>
+    filterSelection("all")
+    function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("project");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+        w3RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        }
+    }
+    
+    function w3AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+        }
+    }
+    
+    function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);     
+        }
+        }
+        element.className = arr1.join(" ");
+    }
+    
+    // Add active class to the current button (highlight it)
+    var btnContainer = document.getElementById("myBtnContainer");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function(){
+        var current = document.getElementsByClassName("active-filter");
+        current[0].className = current[0].className.replace(" active-filter", "");
+        this.className += " active-filter";
+        });
+    }
+    </script>
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
