@@ -57,13 +57,14 @@ span {
     height: 100px;
     top: -100px;
     width: 215px;
-    background-color: lightgrey;
+    background-color: white;
     opacity: 0.75;
     left: 0%;  
     margin:0 auto;
     position: relative;
     display: none;
     text-align: center;
+    padding: 20px 0;
 }
 
 .project:hover .hoverbox {
