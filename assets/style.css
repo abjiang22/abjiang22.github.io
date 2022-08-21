@@ -8,9 +8,31 @@ span {
     }
 }
 
+.carousel-image {
+    height:auto;
+    width:350px; 
+}
+.accentcolor {
+    background-color: #ffcc99;
+}
+
+.nameicon {
+    position:relative; 
+    right:10%; 
+    top:10%;
+}
+
+.url {
+    color:chocolate;
+}
+
+.page-header {
+    font-size:48px; 
+    font-family: courier new;
+}
 .page-center {
     margin: 0;
-    position: fixed;
+    position: absolute;
     top: 52%;
     left: 50%;
     -ms-transform: translate(-50%, -40%);
@@ -25,7 +47,7 @@ span {
     transform: translateY(-50%);
  }
 
- .project {
+.project {
     float: left;
     height: 225px;
     width: 225px;
@@ -49,10 +71,6 @@ span {
     display: block;
 }
 
-.grid {
-    overflow: hidden;
-}
-
 .hoverbox {
     height: 100px;
     top: -100px;
@@ -69,4 +87,17 @@ span {
 
 .project:hover .hoverbox {
     display: block;
+}
+
+.projgrid {
+    overflow: hidden;
+    font-family: courier new; 
+    color: black; 
+    font-size: 20px;
+}
+
+.projtitle {
+    margin:0px; 
+    padding:0px; 
+    position:relative;
 }

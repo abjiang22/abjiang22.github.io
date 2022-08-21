@@ -17,10 +17,9 @@
   
   <body>
     <!-- Nav bar -->
-    <nav class="navbar sticky-top shadow navbar-expand-lg navbar-light" style="background-color: #ffcc99;">
+    <nav class="navbar sticky-top shadow navbar-expand-lg navbar-light accentcolor">
         <div class = "container" style = "font-family: courier new">
             <div class="collapse navbar-collapse text-light" id="navbarSupportedContent">
-                
                 <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
@@ -43,7 +42,7 @@
 
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <h2> <a class="navbar-brand" style="position:absolute; right:200px; top:12px;" href="./index.html"> Alex Jiang 🛠 </a> </h2>
+                        <h2 class="navbar-brand nameicon"> Alex Jiang 🛠 </h2>
                     </li>
                 </ul>
 
@@ -53,9 +52,9 @@
     
     <div class = "container-fluid">
         <!-- Main page content -->
-        <div class = "container"  style = "font-size:18px; margin: auto; width: 70%;">
+        <div class = "container"  style = "font-size: 18px; margin: auto; width: 70%;">
             <br>
-            <h1 class = "font-weight-bold" style="font-size:48px; font-family: courier new"> 🚧 Projects </h1>
+            <h1 class = "font-weight-bold" style="font-size: 48px; font-family: courier new"> 🚧 Projects </h1>
             <br>
             <div id="myBtnContainer">
                 <button class="btn active-filter" onclick="filterSelection('all')">All</button>
@@ -64,37 +63,44 @@
                 <button class="btn" onclick="filterSelection('other')"> Other</button>
             </div>
             <br>
-            <div class = "grid" style = "font-family: courier new; color: black; font-size: 20px;">
+            <div class = "projgrid">
                 <div class="project shadow diy"> 
-                    <a class = "nav-link" style="margin:0px; padding:0px; position:relative;" href="./projects/engine.html"> 
+                    <a class = "nav-link projtitle" href="#"> 
                         <img src="./projects/engine/0.jpg" class="img-fluid"> </img>
                     </a>
                     <div class = "hoverbox"> <h4> <b> Stirling Engine </b> </h4> </div>
                 </div>
 
+                <div class="project shadow other"> 
+                    <a class = "nav-link projtitle" href="./projects/notion.html"> 
+                        <img src="./projects/notion/0.png" class="img-fluid"> </img>
+                    </a>
+                    <div class = "hoverbox"> <h4> <b> <a href = "projects/notion/notion.html"> Notion Template </a> </b> </h4> </div>
+                </div>
+
                 <div class="project shadow software"> 
-                    <a class = "nav-link" style="margin:0px; padding:0px; position:relative;" href="./projects/ddsr.html"> 
+                    <a class = "nav-link projtitle" href="#"> 
                         <img src="./projects/ddsr/0.png" class="img-fluid"> </img>
                     </a>
                     <div class = "hoverbox"> <h4> <b> Dense Depth Research </b> </h4> </div>
                 </div>
                 
                 <div class="project shadow diy"> 
-                    <a class = "nav-link" style="margin:0px; padding:0px; position:relative;" href="./projects/engine.html"> 
+                    <a class = "nav-link projtitle" href="#"> 
                         <img src="./projects/mirror/0.jpg" class="img-fluid"> </img>
                     </a>
                     <div class = "hoverbox"> <h4> <b> Infinity Mirror </b> </h4> </div>
                 </div>
 
                 <div class="project shadow diy"> 
-                    <a class = "nav-link" style="margin:0px; padding:0px; position:relative;" href="./projects/patio.html"> 
+                    <a class = "nav-link projtitle" href="#"> 
                         <img src="./projects/patio/0.jpg" class="img-fluid"> </img>
                     </a>
                     <div class = "hoverbox"> <h4> <b> Patio </b> </h4> </div>
                 </div>
 
                 <div class="project shadow diy"> 
-                    <a class = "nav-link" style="margin:0px; padding:0px; position:relative;" href="./projects/pullup.html"> 
+                    <a class = "nav-link projtitle" href="#"> 
                         <img src="./projects/pullup/0.jpg" class="img-fluid"> </img>
                     </a>
                     <div class = "hoverbox"> <h4> <b> Pull-up bar </b> </h4> </div>
