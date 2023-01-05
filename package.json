@@ -1,4 +1,7 @@
 {
+  "homepage": "https://abjiang22.github.io/",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build",
   "dependencies": {
     "react-tooltip": "^5.3.2"
   }
