@@ -38,6 +38,7 @@ import spotify from '../assets/spotify.png';
 import cad from '../assets/CAD.png'
 import pm from '../assets/PM.png'
 import ml from '../assets/ML.png'
+import code from '../assets/code.png'
 
 export default {
   email,
@@ -75,5 +76,6 @@ export default {
   spotify,
   cad,
   ml,
-  pm
+  pm,
+  code
 };

@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- My CSS-->
+    <link rel="stylesheet" href="./assets/style.css">
+
+    <title>Home</title>
+    <link rel="icon" href="./assets/favicon.png">
+  </head>
+  
+  <body>
+    <!-- Nav bar -->
+    <nav class="navbar sticky-top shadow navbar-expand-lg navbar-light accentcolor">
+        <div class = "container" style = "font-family: courier new">
+            <div class="collapse navbar-collapse text-light" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./about.html">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class = "nav-link" href="./resume.html">Resume</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="#"> Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./blog.html">Blog</a>
+                </li>
+                </ul>
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <h2 class="navbar-brand nameicon"> Alex Jiang 🛠 </h2>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    
+    <div class = "container-fluid">
+        <!-- Main page content -->
+        <div class = "container"  style = "font-size: 18px; margin: auto; width: 70%;">
+            <br>
+            <h1 class = "font-weight-bold" style="font-size: 48px; font-family: courier new"> 🚧 Projects </h1>
+            <br>
+            <div id="myBtnContainer">
+                <button class="btn active-filter" onclick="filterSelection('all')">All</button>
+                <button class="btn" onclick="filterSelection('diy')">DIY</button>
+                <button class="btn" onclick="filterSelection('software')">Software</button>
+                <button class="btn" onclick="filterSelection('other')"> Other</button>
+            </div>
+            <br>
+            <div class = "projgrid">
+                <div class="project shadow diy"> 
+                    <a class = "nav-link projtitle" href="#"> 
+                        <img src="./projects/engine/0.jpg" class="img-fluid"> </img>
+                    </a>
+                    <div class = "hoverbox"> <h4> <b> Stirling Engine </b> </h4> </div>
+                </div>
+
+                <div class="project shadow other"> 
+                    <a class = "nav-link projtitle" href="./projects/notion.html"> 
+                        <img src="./projects/notion/0.png" class="img-fluid"> </img>
+                    </a>
+                    <div class = "hoverbox"> <h4> <b> <a href = "./projects/notion.html"> Notion Template </a> </b> </h4> </div>
+                </div>
+
+                <div class="project shadow software"> 
+                    <a class = "nav-link projtitle" href="#"> 
+                        <img src="./projects/ddsr/0.png" class="img-fluid"> </img>
+                    </a>
+                    <div class = "hoverbox"> <h4> <b> Dense Depth Research </b> </h4> </div>
+                </div>
+                
+                <div class="project shadow diy"> 
+                    <a class = "nav-link projtitle" href="#"> 
+                        <img src="./projects/mirror/0.jpg" class="img-fluid"> </img>
+                    </a>
+                    <div class = "hoverbox"> <h4> <b> Infinity Mirror </b> </h4> </div>
+                </div>
+
+                <div class="project shadow diy"> 
+                    <a class = "nav-link projtitle" href="#"> 
+                        <img src="./projects/patio/0.jpg" class="img-fluid"> </img>
+                    </a>
+                    <div class = "hoverbox"> <h4> <b> Patio </b> </h4> </div>
+                </div>
+
+                <div class="project shadow diy"> 
+                    <a class = "nav-link projtitle" href="#"> 
+                        <img src="./projects/pullup/0.jpg" class="img-fluid"> </img>
+                    </a>
+                    <div class = "hoverbox"> <h4> <b> Pull-up bar </b> </h4> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    filterSelection("all")
+    function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("project");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+        w3RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        }
+    }
+    
+    function w3AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+        }
+    }
+    
+    function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);     
+        }
+        }
+        element.className = arr1.join(" ");
+    }
+    
+    // Add active class to the current button (highlight it)
+    var btnContainer = document.getElementById("myBtnContainer");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function(){
+        var current = document.getElementsByClassName("active-filter");
+        current[0].className = current[0].className.replace(" active-filter", "");
+        this.className += " active-filter";
+        });
+    }
+    </script>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+  
+</html>
